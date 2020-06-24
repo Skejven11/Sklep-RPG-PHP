@@ -27,8 +27,9 @@
                                                 <label for="copy">Zgadzam się na coś</label>
                                             </div>
 
-                                    <ul class="actions">
+                                    <ul class="actions" style="margin-left: 32%">
                                                         <li><input type="submit" value="Dalej" class="button special"/></li>
+                                                        <li><a href="{$conf->action_root}login" class="button">Powrót</a></li>
                                     </ul>
                                     </form>                     		
                                 </div>

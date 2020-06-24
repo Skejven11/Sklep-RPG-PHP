@@ -14,7 +14,7 @@
                                              <input type="password" id="id_pass" name="pass" placeholder="Hasło" />
                                         </div>
                                         <h3></h3>
-                                        <ul class="actions">
+                                        <ul class="actions" style="margin-left: 25%">
                                             <li><input type="submit" value="zaloguj" class="button special"/></li>
                                             <li><a href="{$conf->action_root}RegiShow" class="button">Zarejestruj się</a></li>
                                         </ul>

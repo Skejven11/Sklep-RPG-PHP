@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-24 23:20:00
+/* Smarty version 3.1.34-dev-7, created on 2020-06-24 22:58:50
   from 'C:\xampp\htdocs\SklepRPG\app\views\ProfileView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ef3c380402378_01274987',
+  'unifunc' => 'content_5ef3be8ac961c7_46571104',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4563c6b9333d13467a640aa5a2a5c57a0d0251b0' => 
     array (
       0 => 'C:\\xampp\\htdocs\\SklepRPG\\app\\views\\ProfileView.tpl',
-      1 => 1593033585,
+      1 => 1593032329,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ef3c380402378_01274987 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ef3be8ac961c7_46571104 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_14758974425ef3c3803f1a35_76155792', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_20155865365ef3be8ac83b14_39612106', 'content');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block 'content'} */
-class Block_14758974425ef3c3803f1a35_76155792 extends Smarty_Internal_Block
+class Block_20155865365ef3be8ac83b14_39612106 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_14758974425ef3c3803f1a35_76155792',
+    0 => 'Block_20155865365ef3be8ac83b14_39612106',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -45,9 +45,9 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
     
         <div class="inner">
             <div class='row'>
-                <div style="margin-left: 20% ">
+                <div>
                     <h4>Dane użytkownika:</h4>
-                    <div class="20u 12u">
+                    <div class="4u 12u">
                         <ul class="alt">
                             <li></li>
                             <li>Pseudonim: <?php echo $_smarty_tpl->tpl_vars['profile']->value['login'];?>
@@ -65,37 +65,37 @@ echo $_smarty_tpl->tpl_vars['exists']->value == '0';
 $_prefixVariable1 = ob_get_clean();
 if ($_prefixVariable1) {?>
                         <form action="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
-Addinit" method="post"> 
+Address" method="post"> 
                                 <input type="submit" value="Dodaj adres" class="pure-button pure-button-primary"/>
                         </form>
                     <?php } else { ?>
                         <form action="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
-Addinit" method="post"> 
+Address" method="post"> 
                                 <input type="submit" value="Edytuj adres" class="pure-button pure-button-primary"/>
                         </form>
                     <?php }?>
                 </div>
                 
-                <div style="margin-left: 20% ">
+                <div>
                     <h4>Adres:</h4>
-                    <div class="20u 12u" >
+                    <div class="4u 12u">
                         <ul class="alt">
                             <li></li>
                             <li>Imię: <?php echo $_smarty_tpl->tpl_vars['address']->value['first_name'];?>
 </li>
-                            <li>Nazwisko: <?php echo $_smarty_tpl->tpl_vars['address']->value['last_name'];?>
+                            <li>Nazwisko: <?php echo $_smarty_tpl->tpl_vars['profile']->value['last_name'];?>
  </li>
-                            <li>Ulica: <?php echo $_smarty_tpl->tpl_vars['address']->value['street'];?>
+                            <li>Ulica: <?php echo $_smarty_tpl->tpl_vars['profile']->value['street'];?>
 </li>
-                            <li>Nr Domu: <?php echo $_smarty_tpl->tpl_vars['address']->value['house'];?>
+                            <li>Nr Domu: <?php echo $_smarty_tpl->tpl_vars['profile']->value['house'];?>
 </li>
-                            <li>Nr Mieszkania: <?php echo $_smarty_tpl->tpl_vars['address']->value['apartment'];?>
+                            <li>Nr Mieszkania: <?php echo $_smarty_tpl->tpl_vars['profile']->value['apartment'];?>
 </li>
-                            <li>Kod pocztowy: <?php echo $_smarty_tpl->tpl_vars['address']->value['postal_code'];?>
+                            <li>Kod pocztowy: <?php echo $_smarty_tpl->tpl_vars['profile']->value['postal_code'];?>
 </li>
-                            <li>Miasto: <?php echo $_smarty_tpl->tpl_vars['address']->value['city'];?>
+                            <li>Miasto: <?php echo $_smarty_tpl->tpl_vars['profile']->value['city'];?>
 </li>
-                            <li>Kraj: <?php echo $_smarty_tpl->tpl_vars['address']->value['country'];?>
+                            <li>Kraj: <?php echo $_smarty_tpl->tpl_vars['profile']->value['country'];?>
 </li>
                             <li></li>
                         </ul>

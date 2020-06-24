@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-24 23:33:05
+/* Smarty version 3.1.34-dev-7, created on 2020-06-24 23:26:55
   from 'C:\xampp\htdocs\SklepRPG\app\views\RegiView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ef3c691264a97_59201974',
+  'unifunc' => 'content_5ef3c51fa53ae4_34142727',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd71b8fe9ef6c7a4810f918bda579d0d503b1315c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\SklepRPG\\app\\views\\RegiView.tpl',
-      1 => 1593034383,
+      1 => 1593034014,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ef3c691264a97_59201974 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ef3c51fa53ae4_34142727 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2997908325ef3c691258310_88438865', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7641099645ef3c51fa46c88_24425967', 'content');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block 'content'} */
-class Block_2997908325ef3c691258310_88438865 extends Smarty_Internal_Block
+class Block_7641099645ef3c51fa46c88_24425967 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_2997908325ef3c691258310_88438865',
+    0 => 'Block_7641099645ef3c51fa46c88_24425967',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -69,10 +69,10 @@ RegiSave">
                                                 <label for="copy">Zgadzam się na coś</label>
                                             </div>
 
-                                    <ul class="actions" style="margin-left: 32%">
+                                    <ul class="actions centre">
                                                         <li><input type="submit" value="Dalej" class="button special"/></li>
                                                         <li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
-login" class="button">Powrót</a></li>
+Login" class="button">Powrót</a></li>
                                     </ul>
                                     </form>                     		
                                 </div>

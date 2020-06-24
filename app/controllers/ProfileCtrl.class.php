@@ -12,7 +12,9 @@ use core\ParamUtils;
 class ProfileCtrl {
     
     public $id;
-    public $userData;
+    private $userData;
+    public $exists;
+    private $addressData;
     
     public function validate() {
         $exists = App::getDB()->count("user","iduser",[
@@ -25,6 +27,37 @@ class ProfileCtrl {
         
         if(App::getMessages()->isError()) return false;
         else return true;
+    }
+    
+    public function getAddress($id) {
+        $address;
+        
+        try{
+            $this->exists = App::getDB()->count("address","user_iduser",[
+           'user_iduser' => $this->id 
+            ]);
+            
+            if ($this->exists == '0') return 0;
+            
+            $address = App::getDB()->get("address",
+            [
+                'first_name',
+                'last_name',
+                'street',
+                'house',
+                'apartment',
+                'postal_code',
+                'city',
+                'country'
+                ],[
+                'user_iduser' => $id
+            ]);
+            
+        }catch(\PDOException $e){
+            Utils::addErrorMessage("Błąd połączenia z bazą danych!");
+        }
+        
+        return $address;
     }
     
     public function getUserDB($id){
@@ -61,6 +94,13 @@ class ProfileCtrl {
         if(!$this->validate()){
             $this->id = SessionUtils::load("iduser", true);
         }
+        
+        $this->addressData = $this->getAddress($this->id);
+        
+        App::getSmarty()->assign('exists', $this->exists);
+        App::getSmarty()->assign('address', $this->addressData);
+        
+        
         $this->generateView();
     }
     

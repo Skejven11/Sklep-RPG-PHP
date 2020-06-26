@@ -4,7 +4,7 @@
     
         <div class="inner">
             <div class='row'>
-                <div style="margin-left: 20% ">
+                <div style="margin-left: 22% ">
                     <h4>Dane użytkownika:</h4>
                     <div class="20u 12u">
                         <ul class="alt">

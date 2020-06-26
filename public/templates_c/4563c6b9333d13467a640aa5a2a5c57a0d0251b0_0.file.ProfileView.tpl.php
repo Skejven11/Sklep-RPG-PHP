@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-24 23:20:00
+/* Smarty version 3.1.34-dev-7, created on 2020-06-25 11:12:36
   from 'C:\xampp\htdocs\SklepRPG\app\views\ProfileView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ef3c380402378_01274987',
+  'unifunc' => 'content_5ef46a849a9630_65192902',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4563c6b9333d13467a640aa5a2a5c57a0d0251b0' => 
     array (
       0 => 'C:\\xampp\\htdocs\\SklepRPG\\app\\views\\ProfileView.tpl',
-      1 => 1593033585,
+      1 => 1593076355,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ef3c380402378_01274987 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ef46a849a9630_65192902 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_14758974425ef3c3803f1a35_76155792', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17519510125ef46a84994518_88976279', 'content');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block 'content'} */
-class Block_14758974425ef3c3803f1a35_76155792 extends Smarty_Internal_Block
+class Block_17519510125ef46a84994518_88976279 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_14758974425ef3c3803f1a35_76155792',
+    0 => 'Block_17519510125ef46a84994518_88976279',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -45,7 +45,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
     
         <div class="inner">
             <div class='row'>
-                <div style="margin-left: 20% ">
+                <div style="margin-left: 22% ">
                     <h4>Dane użytkownika:</h4>
                     <div class="20u 12u">
                         <ul class="alt">

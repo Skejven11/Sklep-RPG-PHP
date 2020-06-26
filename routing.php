@@ -7,6 +7,7 @@ App::getRouter()->setDefaultRoute('Home'); #default action
 App::getRouter()->setLoginRoute('LoginShow');
 
 Utils::addRoute('Home', 'HomeCtrl');
+Utils::addRoute('HomeOrder', 'HomeCtrl', ['user','admin','sprzedawca']);
 Utils::addRoute('Order', 'OrderCtrl', ['user', 'admin', 'sprzedawca']);
 Utils::addRoute('Profile', 'ProfileCtrl', ['user', 'admin', 'sprzedawca']);
 Utils::addRoute('login', 'LoginCtrl');

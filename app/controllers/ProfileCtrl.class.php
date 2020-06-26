@@ -37,7 +37,18 @@ class ProfileCtrl {
            'user_iduser' => $this->id 
             ]);
             
-            if ($this->exists == '0') return 0;
+            if ($this->exists == '0') {
+                $address['first_name'] = '-';
+                $address['last_name'] = '-';
+                $address['street'] = '-';
+                $address['house'] = '-';
+                $address['apartment'] = '-';
+                $address['postal_code'] = '-';
+                $address['city'] = '-';
+                $address['country'] = '-';
+                
+                return $address;
+            }
             
             $address = App::getDB()->get("address",
             [

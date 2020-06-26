@@ -14,8 +14,8 @@
                                             <h5></h5>                                        
                                                 <select name="genre" id="genre">
                                                     <option value="">-Gatunek-</option>
-                                                    <option value="2">High Fantasy</option>
-                                                    <option value="1">Dark Fantasy</option>
+                                                    <option value="1">High Fantasy</option>
+                                                    <option value="2">Dark Fantasy</option>
                                                     <option value="3">Sci-Fi</option>
                                                     <option value="4">Postapokalipsa</option>
                                                     <option value="5">Horror</option>

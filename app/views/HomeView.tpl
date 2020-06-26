@@ -35,7 +35,8 @@
             <div class="row">
                 {foreach $rpg as $rypyg }
                     <div class="box 3u " style="margin-left:2%">
-                        <p>{$rypyg["name"]} | Wydawca: {$rypyg["publisher"]} | Autor: {$rypyg["author"]}</p>
+                        <p>{$rypyg["name"]} | Wydawca: {$rypyg["publisher"]} | Autor: {$rypyg["author"]} | Cena: {$rypyg['price']}</p>
+                        <a class="button special small" href="{$conf->action_url}HomeOrder/{$rypyg['idRPG']}/{$rypyg['price']}">Do koszyka</a>
                     </div>
                 {/foreach}     
             </div>

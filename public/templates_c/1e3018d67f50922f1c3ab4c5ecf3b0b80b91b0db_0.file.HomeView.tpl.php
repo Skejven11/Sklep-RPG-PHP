@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-20 00:56:50
+/* Smarty version 3.1.34-dev-7, created on 2020-06-26 13:16:12
   from 'C:\xampp\htdocs\SklepRPG\app\views\HomeView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5eed42b266c868_06806800',
+  'unifunc' => 'content_5ef5d8fcb357d0_07583725',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1e3018d67f50922f1c3ab4c5ecf3b0b80b91b0db' => 
     array (
       0 => 'C:\\xampp\\htdocs\\SklepRPG\\app\\views\\HomeView.tpl',
-      1 => 1592607408,
+      1 => 1593170169,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eed42b266c868_06806800 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ef5d8fcb357d0_07583725 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1677902145eed42b265a574_19968673', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_11871143815ef5d8fcb20036_59467290', 'content');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block 'content'} */
-class Block_1677902145eed42b265a574_19968673 extends Smarty_Internal_Block
+class Block_11871143815ef5d8fcb20036_59467290 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_1677902145eed42b265a574_19968673',
+    0 => 'Block_11871143815ef5d8fcb20036_59467290',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -94,7 +94,12 @@ foreach ($_from as $_smarty_tpl->tpl_vars['rypyg']->value) {
                         <p><?php echo $_smarty_tpl->tpl_vars['rypyg']->value["name"];?>
  | Wydawca: <?php echo $_smarty_tpl->tpl_vars['rypyg']->value["publisher"];?>
  | Autor: <?php echo $_smarty_tpl->tpl_vars['rypyg']->value["author"];?>
+ | Cena: <?php echo $_smarty_tpl->tpl_vars['rypyg']->value['price'];?>
 </p>
+                        <a class="button special small" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
+HomeOrder/<?php echo $_smarty_tpl->tpl_vars['rypyg']->value['idRPG'];?>
+/<?php echo $_smarty_tpl->tpl_vars['rypyg']->value['price'];?>
+">Do koszyka</a>
                     </div>
                 <?php
 }

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-12 19:40:34
+/* Smarty version 3.1.34-dev-7, created on 2020-06-27 20:13:39
   from 'C:\xampp\htdocs\SklepRPG\app\views\templates\main.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ee3be12906ed8_47479250',
+  'unifunc' => 'content_5ef78c534fc711_61354996',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3aa38327820f66a8627e6e6571acde26fa5e4929' => 
     array (
       0 => 'C:\\xampp\\htdocs\\SklepRPG\\app\\views\\templates\\main.tpl',
-      1 => 1591983633,
+      1 => 1593281617,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ee3be12906ed8_47479250 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ef78c534fc711_61354996 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -53,6 +53,14 @@ LoginShow">Zaloguj</a>
 Order">Koszyk</a>
                         <a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
 Profile">Profil</a>
+                        <?php if (core\RoleUtils::inRole("sprzedawca")) {?>
+                            <a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+OrderManage">Zamówienia</a>
+                        <?php }?>
+                        <?php if (core\RoleUtils::inRole("admin")) {?>
+                            <a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+UserManage">Użytkownicy</a>
+                        <?php }?>
                         <a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
 Logout">Wyloguj</a>
                         <?php }?>
@@ -67,7 +75,7 @@ Logout">Wyloguj</a>
 </section>
                         
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_8008801095ee3be12905f29_35970372', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_14344440075ef78c534fbe98_15610720', 'content');
 ?>
 
 
@@ -87,12 +95,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_8008801095ee3be129
 
 </html><?php }
 /* {block 'content'} */
-class Block_8008801095ee3be12905f29_35970372 extends Smarty_Internal_Block
+class Block_14344440075ef78c534fbe98_15610720 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_8008801095ee3be12905f29_35970372',
+    0 => 'Block_14344440075ef78c534fbe98_15610720',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

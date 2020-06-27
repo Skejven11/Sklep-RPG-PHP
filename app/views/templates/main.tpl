@@ -22,6 +22,12 @@
                         {else}	
                         <a href="{$conf->action_root}Order">Koszyk</a>
                         <a href="{$conf->action_root}Profile">Profil</a>
+                        {if core\RoleUtils::inRole("sprzedawca")}
+                            <a href="{$conf->action_root}OrderManage">Zamówienia</a>
+                        {/if}
+                        {if core\RoleUtils::inRole("admin")}
+                            <a href="{$conf->action_root}UserManage">Użytkownicy</a>
+                        {/if}
                         <a href="{$conf->action_root}Logout">Wyloguj</a>
                         {/if}
 		</nav>

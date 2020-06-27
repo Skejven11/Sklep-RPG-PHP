@@ -3,22 +3,21 @@
     
     
 <section id="one" class="wrapper">
-    
-    {if core\RoleUtils::inRole("sprzedawca")}
-        <form action="{$conf->action_root}AddItem" method="post"> 
-                <input type="submit" value="Dodaj nowy produkt" class="button special"/>
-        </form>
-    {/if}
-    
-    <form id="search-form" class="pure-form pure-form-stacked" action="{$conf->action_url}Home"
-	<fieldset>
-		<input type="text" placeholder="nazwa" name="item_name" value="{$search->name}" /><br />
-		<button type="submit" class="pure-button pure-button-primary">Wyszukaj</button>
-	</fieldset>
-    </form>
-    
     <div class="row">
         <div class="2u" style="margin-left: 2% ">
+            {if core\RoleUtils::inRole("sprzedawca")}
+                <form action="{$conf->action_root}AddItem" method="post"> 
+                        <input type="submit" value="Dodaj nowy produkt" class="button special" style="margin-left: 2%"/>
+                </form>
+            {/if}
+
+            <form id="search-form" class="pure-form pure-form-stacked" action="{$conf->action_url}Home"
+                <fieldset>
+                        <input type="text" style="width: 80%" placeholder="nazwa" name="item_name" value="{$search->name}" /><br />
+                        <button type="submit" class="pure-button pure-button-primary" style="margin-left: 18%">Wyszukaj</button>
+                </fieldset>
+            </form>
+ 
             <div class="box" style="margin-right:20%" >
                  <h3> Gatunki: </h3>
                 <ul class="alt">
@@ -35,7 +34,7 @@
             <div class="row">
                 {foreach $rpg as $rypyg }
                     <div class="box 3u " style="margin-left:2%">
-                        <p>{$rypyg["name"]} | Wydawca: {$rypyg["publisher"]} | Autor: {$rypyg["author"]} | Cena: {$rypyg['price']}</p>
+                        <p>{$rypyg["name"]} | Wydawca: {$rypyg["publisher"]} | Autor: {$rypyg["author"]} | Cena: {$rypyg['price']} zł</p>
                         <a class="button special small" href="{$conf->action_url}HomeOrder/{$rypyg['idRPG']}/{$rypyg['price']}">Do koszyka</a>
                     </div>
                 {/foreach}     
@@ -53,6 +52,13 @@
                                         </ul>
                                 </div>
                                 {/if}     
+    </div>
+    <div class="inner">
+            <ul class="icons" style="margin-left: 50%">
+                {for $temp = 1 to $count}
+                    <li><a href="{$conf->action_url}Home/{$temp}">{$temp}</a></li>
+                {/for}
+            </ul>
     </div>
 </section>
 

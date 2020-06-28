@@ -19,13 +19,14 @@ class HomeCtrl {
     private $itemPrice;
     private $count;
     private $page;
-    
+    private $genre;
     public function __construct() {
         $this->search = new SearchForm();
     }
     
     public function getParams() {
         $this->search->name = ParamUtils::getFromRequest('item_name');
+        $this->genre = ParamUtils::getFromRequest('genre');
     }
 
     public function getGenreDB()
@@ -56,7 +57,7 @@ class HomeCtrl {
         }
         $count /=9;
         $count = intval($count);
-        $count +=$count;
+        $count +=1;
         
         return $count;
     }
@@ -66,7 +67,6 @@ class HomeCtrl {
         $rpg;
         if (!isset($this->page)) $this->page = 1;
         $min = ($this->page-1)*9;
-        $max = $this->page*9;
         
         try{
             $rpg = App::getDB()->select("rpg", [
@@ -80,7 +80,8 @@ class HomeCtrl {
                 'genre.Genname',
             ],[
                 'rpg.name[~]' => $this->search->name,
-                "LIMIT" =>[$min,$max]
+                'genre.Genname[~]' => $this->genre,
+                "LIMIT" =>[$min,9]
             ],);
         }catch(\PDOException $e){
             Utils::addErrorMessage("Błąd połączenia z bazą danych!");

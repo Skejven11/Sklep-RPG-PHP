@@ -36,7 +36,7 @@ class RegiCtrl {
             'required' => true,
             'required_message' => 'Login jest wymagany',
             'min_length' => 3,
-            'max_length' => 32,
+            'max_length' => 16,
             'validator_message' => 'Login powinien zawierać od 3 do 32 znaków'
         ]);
         
@@ -44,7 +44,7 @@ class RegiCtrl {
             'required' => true,
             'required_message' => 'Hasło jest wymagane',
             'min_length' => 3,
-            'max_length' => 32,
+            'max_length' => 16,
             'validator_message' => 'Hasło powinno zawierac od 3 do 32 znaków'
         ]);
         

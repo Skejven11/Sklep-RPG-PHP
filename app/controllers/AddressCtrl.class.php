@@ -120,6 +120,7 @@ class AddressCtrl {
                 'postal_code' => $this->form->postal,
                 'city' => $this->form->city,
                 'country' => $this->form->country,
+                'edit_date' => (new \DateTime())->format('Y-m-d H:i:s'),
                 'user_iduser' => $this->id,
             ]);
             
@@ -139,6 +140,9 @@ class AddressCtrl {
                 'postal_code' => $this->form->postal,
                 'city' => $this->form->city,
                 'country' => $this->form->country,
+                'edit_date' => (new \DateTime())->format('Y-m-d H:i:s'),
+
+                ],[
                 'user_iduser' => $this->id,
             ]);
             

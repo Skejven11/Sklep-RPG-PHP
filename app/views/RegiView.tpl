@@ -10,7 +10,7 @@
                                             <div class="inner 7u">
                                                     <input type="text" name="login" id="name" value="" placeholder="Pseudonim" />
                                             </div>
-                                            <h5 style="text-align: center">Pseudonim powinien składać się z x do y znaków</h5>
+                                            <h5 style="text-align: center">Pseudonim powinien składać się z 3 do 16 znaków</h5>
 
                                             <div class="inner 7u">
                                                     <input type="email" name="email" id="email" value="" placeholder="Email" />
@@ -20,10 +20,10 @@
                                             <div class="inner 7u">
                                                     <input type="password" name="password" id="email" value="" placeholder="Hasło" />
                                             </div>
-                                            <h5 style="text-align: center">Hasło powinno składać się z x do y znaków</h5>
+                                            <h5 style="text-align: center">Hasło powinno składać się z 3 do 16 znaków</h5>
 
                                             <div class="inner 7u">
-                                                <input type="checkbox" id="copy" name="copy">
+                                                <input type="checkbox" id="copy" name="checkmark">
                                                 <label for="copy">Zgadzam się na coś</label>
                                             </div>
 

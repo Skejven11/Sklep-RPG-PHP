@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-24 23:33:05
+/* Smarty version 3.1.34-dev-7, created on 2020-06-28 20:03:35
   from 'C:\xampp\htdocs\SklepRPG\app\views\RegiView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ef3c691264a97_59201974',
+  'unifunc' => 'content_5ef8db77bfdde2_34974067',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd71b8fe9ef6c7a4810f918bda579d0d503b1315c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\SklepRPG\\app\\views\\RegiView.tpl',
-      1 => 1593034383,
+      1 => 1593366396,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ef3c691264a97_59201974 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ef8db77bfdde2_34974067 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2997908325ef3c691258310_88438865', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_13588614995ef8db77a714c7_13080609', 'content');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block 'content'} */
-class Block_2997908325ef3c691258310_88438865 extends Smarty_Internal_Block
+class Block_13588614995ef8db77a714c7_13080609 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_2997908325ef3c691258310_88438865',
+    0 => 'Block_13588614995ef8db77a714c7_13080609',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -52,7 +52,7 @@ RegiSave">
                                             <div class="inner 7u">
                                                     <input type="text" name="login" id="name" value="" placeholder="Pseudonim" />
                                             </div>
-                                            <h5 style="text-align: center">Pseudonim powinien składać się z x do y znaków</h5>
+                                            <h5 style="text-align: center">Pseudonim powinien składać się z 3 do 16 znaków</h5>
 
                                             <div class="inner 7u">
                                                     <input type="email" name="email" id="email" value="" placeholder="Email" />
@@ -62,10 +62,10 @@ RegiSave">
                                             <div class="inner 7u">
                                                     <input type="password" name="password" id="email" value="" placeholder="Hasło" />
                                             </div>
-                                            <h5 style="text-align: center">Hasło powinno składać się z x do y znaków</h5>
+                                            <h5 style="text-align: center">Hasło powinno składać się z 3 do 16 znaków</h5>
 
                                             <div class="inner 7u">
-                                                <input type="checkbox" id="copy" name="copy">
+                                                <input type="checkbox" id="copy" name="checkmark">
                                                 <label for="copy">Zgadzam się na coś</label>
                                             </div>
 

@@ -37,6 +37,7 @@ class HomeCtrl {
             $genres = App::getDB()->select("genre", 
             [
                 "Genname",
+                "idGenre"
             ]);
             
         }catch(\PDOException $e){
@@ -50,7 +51,8 @@ class HomeCtrl {
         $count;
         try {
             $count = App::getDB()->count("rpg",[
-                'rpg.name[~]' => $this->search->name
+                'rpg.name[~]' => $this->search->name,
+                'rpg.Genre_idGenre[~]' =>$this->genre
                 ]);
         } catch(\PDOException $e){
             Utils::addErrorMessage("Błąd połączenia z bazą danych!");
@@ -77,10 +79,11 @@ class HomeCtrl {
                 'rpg.publisher',
                 'rpg.author',
                 'rpg.price',
-                'genre.Genname',
+                'rpg.Genre_idGenre',
+                'genre.Genname'
             ],[
                 'rpg.name[~]' => $this->search->name,
-                'genre.Genname[~]' => $this->genre,
+                'rpg.Genre_idGenre[~]' => $this->genre,
                 "LIMIT" =>[$min,9]
             ],);
         }catch(\PDOException $e){

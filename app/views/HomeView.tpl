@@ -11,7 +11,7 @@
                 </form>
             {/if}
 
-            <form id="search-form" class="pure-form pure-form-stacked" action="{$conf->action_url}Home?genre={$gen["Genname"]}">
+            <form id="search-form" class="pure-form pure-form-stacked" action="{$conf->action_url}Home">
                 <fieldset>
                         <input type="text" style="width: 80%" placeholder="nazwa" name="item_name" value="{$search->name}" /><br />
                         <button type="submit" class="pure-button pure-button-primary" style="margin-left: 18%">Wyszukaj</button>
@@ -23,7 +23,7 @@
                 <ul class="alt">
                     <li></li>
                     {foreach $genres as $gen}
-                    <li> <a href="{$conf->action_url}Home/1?genre={$gen["Genname"]}">{$gen["Genname"]}</a></li>
+                    <li> <a href="{$conf->action_url}Home/1?genre={$gen["idGenre"]}">{$gen["Genname"]}</a></li>
                     {/foreach}
                     <li></li>
                 </ul>
@@ -34,7 +34,7 @@
             <div class="row">
                 {foreach $rpg as $rypyg }
                     <div class="box 3u" style="margin-left:2%">
-                        <p>{$rypyg["name"]} | Wydawca: {$rypyg["publisher"]} | Autor: {$rypyg["author"]} | Cena: {$rypyg['price']} zł Gatunek: {$rypyg['Genname']}</p>
+                        <p>{$rypyg["name"]} |<br> Wydawca: {$rypyg["publisher"]} | Autor: {$rypyg["author"]} | <br> Cena: {$rypyg['price']} zł <br> Gatunek: {$rypyg['Genname']}</p>
                         <a class="button special small" href="{$conf->action_url}HomeOrder/{$rypyg['idRPG']}/{$rypyg['price']}">Do koszyka</a>
                     </div>
                 {/foreach}     

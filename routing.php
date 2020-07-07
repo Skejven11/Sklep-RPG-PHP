@@ -11,7 +11,6 @@ Utils::addRoute('HomeOrder', 'HomeCtrl', ['user','admin','sprzedawca']);
 
 Utils::addRoute('Order', 'OrderCtrl', ['user', 'admin', 'sprzedawca']);
 Utils::addRoute('OrderFinish', 'OrderFinishCtrl', ['user', 'admin', 'sprzedawca']);
-Utils::addRoute('OrderEnd', 'OrderFinishCtrl', ['user', 'admin', 'sprzedawca']);
 
 Utils::addRoute('OrderManage', 'OrderManageCtrl', ['sprzedawca']);
 Utils::addRoute('ChangeStatus', 'OrderManageCtrl', ['sprzedawca']);

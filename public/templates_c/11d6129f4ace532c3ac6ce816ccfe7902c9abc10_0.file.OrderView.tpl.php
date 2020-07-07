@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-06-27 13:20:13
+/* Smarty version 3.1.34-dev-7, created on 2020-07-07 16:45:02
   from 'C:\xampp\htdocs\SklepRPG\app\views\OrderView.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ef72b6defa424_82924591',
+  'unifunc' => 'content_5f048a6e69ca76_38803338',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '11d6129f4ace532c3ac6ce816ccfe7902c9abc10' => 
     array (
       0 => 'C:\\xampp\\htdocs\\SklepRPG\\app\\views\\OrderView.tpl',
-      1 => 1593256812,
+      1 => 1594133074,
       2 => 'file',
     ),
   ),
@@ -20,22 +20,22 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ef72b6defa424_82924591 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5f048a6e69ca76_38803338 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_10556124075ef72b6dee7707_73832038', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17331618835f048a6e6855b5_73527205', 'content');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.tpl");
 }
 /* {block 'content'} */
-class Block_10556124075ef72b6dee7707_73832038 extends Smarty_Internal_Block
+class Block_17331618835f048a6e6855b5_73527205 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_10556124075ef72b6dee7707_73832038',
+    0 => 'Block_17331618835f048a6e6855b5_73527205',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -111,7 +111,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             <?php if ($_smarty_tpl->tpl_vars['p']->value['name'] == 'Aktywne') {?>
                 <ul class="icons">
                     <li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
-OrderFinish" class="button special small">Zamawiam!</a></li>
+OrderFinish/<?php echo $_smarty_tpl->tpl_vars['p']->value['idorder'];?>
+" class="button special small">Zamawiam!</a></li>
                     <li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
 Order/DeleteO" class="button special small">Usuń!</a></li>
                 </ul>

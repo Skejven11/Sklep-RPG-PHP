@@ -12,7 +12,7 @@
         <p>Prosimy o jak najszybszą wpłatę na konto 
         <br>Status przesyłki można śledzić za pomocą zakładki "Koszyk" i dedykowanego wyszukiwania zamówienia po statusie 
         </p>
-        <a href="{$conf->action_root}OrderEnd" class="button special">Powrót</a>
+        <a href="{$conf->action_root}Order" class="button special">Powrót</a>
     </div>
 </section>
 

@@ -10,7 +10,8 @@ use core\ParamUtils;
 
 class OrderFinishCtrl {
     
-    private $id;
+    private $idOrder;
+    private $idUser;
     private $order;
     
     public function updateOrder() {
@@ -18,8 +19,7 @@ class OrderFinishCtrl {
             App::getDB()->update("order", [
                 'status_idstatus' => 2
                 ],[
-                'user_iduser' => $this->id,
-                'status_idstatus' => 1
+                'idorder' => $this->idOrder
                 ]);
         }catch(\PDOException $e){
             Utils::addErrorMessage("Błąd połączenia z bazą danych!");
@@ -31,7 +31,7 @@ class OrderFinishCtrl {
         $exists;
         try {
            $exists = App::getDB()->has("address",[
-               'user_iduser' => $this->id
+               'user_iduser' => $this->idUser
            ]);
             
         } catch (\PDOException $e){
@@ -47,8 +47,7 @@ class OrderFinishCtrl {
                 'total_price',
                 'idorder'
                 ],[
-                'user_iduser' => $this->id,
-                'status_idstatus' => 1    
+                'idorder' => $this->idOrder
             ]);
             
         } catch (\PDOException $e){
@@ -59,18 +58,15 @@ class OrderFinishCtrl {
     
 
     public function action_OrderFinish() {
-        $this->id = SessionUtils::load("iduser", true);
+        $this->idUser = SessionUtils::load("iduser", true);
+        $this->idOrder = ParamUtils::getFromCleanURL(1);
         if (!$this->checkAddress()) header("Location: ".App::getConf()->app_url."/Addinit");
         else { 
             $this->order = $this->getOrder();
+            $this->updateOrder();
             App::getSmarty()->assign('order',$this->order);
             App::getSmarty()->display("OrderFinishView.tpl");
         }
     }
     
-    public function action_OrderEnd() {
-        $this->id = SessionUtils::load("iduser", true);
-        $this->updateOrder();
-        header("Location: ".App::getConf()->app_url."/Order");
-    }
 }

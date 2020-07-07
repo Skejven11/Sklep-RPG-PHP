@@ -48,7 +48,7 @@
                 </table>
             {if $p['name'] eq 'Aktywne'}
                 <ul class="icons">
-                    <li><a href="{$conf->action_root}OrderFinish" class="button special small">Zamawiam!</a></li>
+                    <li><a href="{$conf->action_root}OrderFinish/{$p['idorder']}" class="button special small">Zamawiam!</a></li>
                     <li><a href="{$conf->action_root}Order/DeleteO" class="button special small">Usuń!</a></li>
                 </ul>
             {/if}

@@ -3,6 +3,7 @@
     
     
 <section id="one" class="wrapper">
+    <h3 style="margin-left: 50%"> Strona {$page} </h3>
     <div class="row">
         <div class="2u" style="margin-left: 2% ">
             {if core\RoleUtils::inRole("sprzedawca")}
@@ -55,9 +56,15 @@
     </div>
     <div class="inner">
             <ul class="icons" style="margin-left: 50%">
-                {for $temp = 1 to $count}
-                        <li><a href="{$conf->action_url}Home/{$temp}?item_name={$search->name}">{$temp}</a></li>
+                {if $page != 1}
+                <li> <a href="{$conf->action_url}Home/{$page-1}?item_name={$search->name}"><</a></li>
+                {/if}
+                {for $temp = $minpage to $maxpage}
+                        <li><a href="{$conf->action_url}Home/{$temp}?item_name={$search->name}&genre={$genre}">{$temp}</a></li>
                 {/for}
+                {if $page != $maxpage}
+                <li> <a href="{$conf->action_url}Home/{$page+1}?item_name={$search->name}">></a></li>
+                {/if}
             </ul>
     </div>
 </section>

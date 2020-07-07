@@ -20,6 +20,8 @@ class HomeCtrl {
     private $count;
     private $page;
     private $genre;
+    private $itemNumber;
+    
     public function __construct() {
         $this->search = new SearchForm();
     }
@@ -27,6 +29,7 @@ class HomeCtrl {
     public function getParams() {
         $this->search->name = ParamUtils::getFromRequest('item_name');
         $this->genre = ParamUtils::getFromRequest('genre');
+        $this->itemNumber = 9;
     }
 
     public function getGenreDB()
@@ -57,9 +60,11 @@ class HomeCtrl {
         } catch(\PDOException $e){
             Utils::addErrorMessage("Błąd połączenia z bazą danych!");
         }
-        $count /=9;
+        $count /=$this->itemNumber;
+        if (!is_int($count)) {
         $count = intval($count);
         $count +=1;
+        }
         
         return $count;
     }
@@ -68,7 +73,7 @@ class HomeCtrl {
     {
         $rpg;
         if (!isset($this->page)) $this->page = 1;
-        $min = ($this->page-1)*9;
+        $min = ($this->page-1)*$this->itemNumber;
         
         try{
             $rpg = App::getDB()->select("rpg", [
@@ -84,7 +89,7 @@ class HomeCtrl {
             ],[
                 'rpg.name[~]' => $this->search->name,
                 'rpg.Genre_idGenre[~]' => $this->genre,
-                "LIMIT" =>[$min,9]
+                "LIMIT" =>[$min,$this->itemNumber]
             ],);
         }catch(\PDOException $e){
             Utils::addErrorMessage("Błąd połączenia z bazą danych!");
@@ -177,9 +182,19 @@ class HomeCtrl {
         $this->rpgs = $this->getRpgDB();
         $this->count = $this->countRPGs();
         
-        App::getSmarty()->assign('count', $this->count);
+        if ($this->page >3) $maxpage = $this->page+3;
+        else $maxpage = 6;
+        if($maxpage>$this->count) $maxpage = $this->count;
+        if ($this->page >3) $minpage = $maxpage-5;
+        else $minpage = 1;
+        if($minpage<=0) $minpage = 1;
+        
+        App::getSmarty()->assign('minpage', $minpage);
+        App::getSmarty()->assign('page', $this->page);
+        App::getSmarty()->assign('maxpage', $maxpage);
         App::getSmarty()->assign('rpg', $this->rpgs);
         App::getSmarty()->assign('search', $this->search);
+        App::getSmarty()->assign('genre', $this->genre);
         App::getSmarty()->assign('genres', $this->genreDis);
         App::getSmarty()->display("HomeView.tpl");
         
@@ -195,9 +210,20 @@ class HomeCtrl {
         $this->rpgs = $this->getRpgDB();
         $this->count = $this->countRPGs();
         
-        App::getSmarty()->assign('count', $this->count);
+        if ($this->page >3) $maxpage = $this->page+3;
+        else $maxpage = 6;
+        if($maxpage>$this->count) $maxpage = $this->count;
+        if ($this->page >3) $minpage = $maxpage-5;
+        else $minpage = 1;
+        if($minpage<=0) $minpage = 1;
+        
+        
+        App::getSmarty()->assign('minpage', $minpage);
+        App::getSmarty()->assign('page', 1);
+        App::getSmarty()->assign('maxpage', $maxpage);
         App::getSmarty()->assign('rpg', $this->rpgs);
         App::getSmarty()->assign('search', $this->search);
+        App::getSmarty()->assign('genre', $this->genre);
         App::getSmarty()->assign('genres', $this->genreDis);
         App::getSmarty()->display("HomeView.tpl");
     }
